@@ -28,3 +28,7 @@ class Voucher:
         }
 
 
+    def save(self):
+        dynamodb = boto3.resource('dynamodb', region_name='eu-west-1')
+        table = dynamodb.Table('vouchers_db')
+        return table.put_item(Item=self.to_dict())
