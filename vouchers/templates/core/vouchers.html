@@ -4,17 +4,18 @@
 
 {% block content %}
 
-    <form class="mt-3 card p-3">
+    <form class="mt-3 card p-3" action="{% url 'create_voucher' %}" enctype="multipart/form-data" method="post" >
+        {% csrf_token %}
 
         <div class="row">
             <div class="mb-3 col-12 col-md-6">
                 <label for="voucher_description" class="form-label">Description</label>
-                <input type="text" class="form-control" id="voucher_description" aria-describedby="description">
+                {{ form.voucher_description }}
             </div>
 
             <div class="mb-3 col-12 col-md-6">
                 <label for="voucher_price" class="form-label">Price</label>
-                <input type="number" class="form-control" id="voucher_price">
+               {{ form.voucher_price }}
             </div>
         </div>
 
@@ -22,17 +23,17 @@
         <div class="row">
             <div class="mb-3 col-12 col-md-6">
                 <label for="voucher_location" class="form-label">Target Location</label>
-                <input type="text" class="form-control" id="voucher_location">
+                {{ form.voucher_location }}
             </div>
 
             <div class="mb-3 col-12 col-md-3">
                 <label for="voucher_status" class="form-label">Status</label>
-                <input type="text" class="form-control" id="voucher_status">
+                {{ form.voucher_status }}
             </div>
 
             <div class="mb-3 col-12 col-md-3">
                 <label for="voucher_quantity" class="form-label">Quantity</label>
-                <input type="number" class="form-control" id="voucher_quantity">
+               {{ form.voucher_quantity }}
             </div>
         </div>
 
