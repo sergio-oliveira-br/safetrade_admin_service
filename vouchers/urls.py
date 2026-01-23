@@ -9,6 +9,7 @@ urlpatterns = [
 
     # Admin
     path('vouchers/', view_vouchers.vouchers_page, name='vouchers'),
+    path('vouchers/create', view_vouchers.create_voucher, name='create_voucher'),
 
     # Dashboard
     path('dashboard/', view_dashboard.dashboard_page, name='dashboard'),
