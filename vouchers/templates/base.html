@@ -25,7 +25,14 @@
         </div>
     </nav>
 
-     <!-- notifications -->
+    <!-- notifications -->
+    {% if success_message %}
+        <div class="alert alert-success">{{ success_message }}</div>
+    {% endif %}
+
+    {% if error_message %}
+        <div class="alert alert-danger">{{ error_message }}</div>
+    {% endif %}
 
      <!-- dynamic content -->
      <main class="container">
