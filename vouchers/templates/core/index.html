@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} SafeTrade | Index {% endblock %}
+
+{% block content %}
+
+  <div class="container mt-5">
+    <div class="jumbotron p-5 mb-4 rounded-3 border">
+        <h1 class="display-4 fw-bold">SafeTrade Admin Service</h1>
+        <p class="lead text-muted">Scalable Infrastructure for Voucher Management.</p>
+        <hr class="my-4">
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <h3>About Us</h3>
+                <p>The <strong>SafeTrade Admin</strong> is a back-office platform designed to operate in
+                    <em>Event-Driven</em> architecture, focused on issuing and controlling vouchers.</p>
+
+                <p>This system was developed as part of the <strong>Scalable Cloud Programming</strong> discipline, using best infrastructure practices  and service decoupling. </p>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">Cloud Stack</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-cloud-check"></i> <strong>Compute:</strong> AWS App Runner</li>
+                            <li><i class="bi bi-database"></i> <strong>NoSQL:</strong> DynamoDB</li>
+                            <li><i class="bi bi-hdd"></i> <strong>Storage:</strong> Amazon S3</li>
+                            <li><i class="bi bi-shield-lock"></i> <strong>Auth:</strong> ???</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a class="btn btn-primary btn-lg" href="{% url 'vouchers' %}" role="button">Manage Vouchers</a>
+            <a class="btn btn-outline-secondary btn-lg" href="{% url 'dashboard' %}" role="button">View Dashboard</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
