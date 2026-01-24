@@ -54,7 +54,7 @@ def create_voucher(request):
             error_message = 'Sorry, something went wrong'
 
     elif request.method == 'POST':
-        error_message = 'Check your input data and try again'
+        error_message = 'Please check your input data and try again'
 
     context = {
         'form': form,
