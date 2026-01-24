@@ -8,7 +8,7 @@ from vouchers.choices import VoucherStatus, CountryCode
 class Voucher:
 
     def __init__(self, voucher_description, voucher_price, voucher_quantity, voucher_status, voucher_location):
-        self.voucher_id = str(uuid.uuid4())[:8].upper()
+        # self.voucher_id = str(uuid.uuid4())[:8].upper()
         self.voucher_description = voucher_description
         self.voucher_price = str(voucher_price)
         self.voucher_quantity = voucher_quantity
@@ -19,7 +19,7 @@ class Voucher:
     def to_dict(self):
         """Converts the object to the format that DynamoDB supports"""
         return {
-            'voucher_id': self.voucher_id,
+            'voucher_id': str(uuid.uuid4())[:8].upper(),
             'voucher_description': self.voucher_description,
             'voucher_price': self.voucher_price,
             'voucher_quantity': self.voucher_quantity,
