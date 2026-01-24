@@ -1,5 +1,6 @@
 import uuid
 import boto3
+from boto3.dynamodb.conditions import Key
 
 from vouchers.choices import VoucherStatus, CountryCode
 
@@ -40,3 +41,15 @@ class Voucher:
         with table.batch_writer() as batch:
             for _ in range(int(self.voucher_quantity)):
                 batch.put_item(Item=self.to_dict())
+
+    @staticmethod
+    def list_vouchers_by_location(location_code):
+        # table = boto3.resource('dynamodb', region_name='eu-west-1').Table('vouchers_db')
+        dynamodb = boto3.resource('dynamodb', region_name='eu-west-1')
+        table = dynamodb.Table('vouchers_db')
+
+        response = table.query(
+            KeyConditionExpression=Key('voucher_location').eq(location_code))
+
+        return response.get('Items', [])
+
