@@ -32,3 +32,11 @@ class Voucher:
         dynamodb = boto3.resource('dynamodb', region_name='eu-west-1')
         table = dynamodb.Table('vouchers_db')
         return table.put_item(Item=self.to_dict())
+
+    def save_multiple_vouchers(self):
+        dynamodb = boto3.resource('dynamodb', region_name='eu-west-1')
+        table = dynamodb.Table('vouchers_db')
+
+        with table.batch_writer() as batch:
+            for _ in range(int(self.voucher_quantity)):
+                batch.put_item(Item=self.to_dict())
