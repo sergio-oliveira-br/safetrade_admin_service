@@ -41,8 +41,9 @@ def create_voucher(request):
                 voucher_quantity=data['voucher_quantity']
             )
 
-            voucher.save()
-            success_message = 'Voucher(s) was created successfully'
+            # voucher.save()
+            voucher.save_multiple_vouchers()
+            success_message = 'The voucher creation process has been completed successfully.'
 
             form = VoucherForm()
 
