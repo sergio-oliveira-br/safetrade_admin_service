@@ -14,7 +14,10 @@ from vouchers.model_voucher import Voucher
 def vouchers_page(request):
     form = VoucherForm(request.POST or None)
 
+    voucher_list = Voucher.list_vouchers_by_location('BR')
+
     context = {
+        'voucher_table': voucher_list,
         'form': form,
     }
 
