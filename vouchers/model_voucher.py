@@ -14,13 +14,12 @@ class Voucher:
         dynamodb = boto3.resource('dynamodb', region_name=cls._REGION)
         return dynamodb.Table(cls._TABLE_NAME)
 
-    def __init__(self, voucher_description, voucher_price, voucher_quantity, voucher_status, voucher_location):
+    def __init__(self, voucher_description, voucher_price, voucher_quantity, voucher_status):
         # self.voucher_id = str(uuid.uuid4())[:8].upper()
         self.voucher_description = voucher_description
         self.voucher_price = str(voucher_price)
         self.voucher_quantity = voucher_quantity
         self.voucher_status = voucher_status
-        self.voucher_location = voucher_location
 
 
     def to_dict(self):
@@ -31,7 +30,6 @@ class Voucher:
             'voucher_price': self.voucher_price,
             'voucher_quantity': self.voucher_quantity,
             'voucher_status': str(self.voucher_status),
-            'voucher_location': str(self.voucher_location)
         }
 
 
@@ -49,9 +47,9 @@ class Voucher:
 
 
     @staticmethod
-    def list_vouchers_by_location(location_code):
+    def list_vouchers_by_status(status_code):
         table = Voucher._get_table()
-        response = table.query(KeyConditionExpression=Key('voucher_location').eq(location_code))
+        response = table.query(KeyConditionExpression=Key('voucher_status').eq(status_code))
 
         return response.get('Items', [])
 
