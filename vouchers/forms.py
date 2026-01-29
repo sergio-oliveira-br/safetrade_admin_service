@@ -1,7 +1,7 @@
 # vouchers/forms.py
 
 from django import forms
-from .choices import CountryCode, VoucherStatus
+from .choices import VoucherStatus
 
 class VoucherForm(forms.Form):
     voucher_description = forms.CharField(
@@ -23,12 +23,6 @@ class VoucherForm(forms.Form):
         min_value=1,
         max_value=20,
         widget=forms.NumberInput(attrs={'class': 'form-control'})
-    )
-
-    voucher_location = forms.ChoiceField(
-        label='Voucher Location',
-        choices=CountryCode.choices,
-        widget=forms.Select(attrs={'class': 'form-control'})
     )
 
     voucher_status = forms.ChoiceField(
