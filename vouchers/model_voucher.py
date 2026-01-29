@@ -30,6 +30,7 @@ class Voucher:
             'voucher_price': self.voucher_price,
             'voucher_quantity': self.voucher_quantity,
             'voucher_status': str(self.voucher_status),
+            'voucher_tx_hash': '',
         }
 
 
