@@ -38,7 +38,6 @@ def create_voucher(request):
         try:
             voucher = Voucher(
                 voucher_description=data['voucher_description'],
-                voucher_location=data['voucher_location'],
                 voucher_status=data['voucher_status'],
                 voucher_price=data['voucher_price'],
                 voucher_quantity=data['voucher_quantity']
