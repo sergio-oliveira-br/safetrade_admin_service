@@ -28,7 +28,6 @@ class Voucher:
             'voucher_id': str(uuid.uuid4())[:8].upper(),
             'voucher_description': self.voucher_description,
             'voucher_price': self.voucher_price,
-            'voucher_quantity': self.voucher_quantity,
             'voucher_status': str(self.voucher_status),
             'voucher_tx_hash': '',
         }
