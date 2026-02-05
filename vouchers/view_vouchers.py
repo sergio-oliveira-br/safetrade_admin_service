@@ -14,7 +14,7 @@ from vouchers.model_voucher import Voucher
 def vouchers_page(request):
     form = VoucherForm(request.POST or None)
 
-    voucher_list = Voucher.list_vouchers_by_status('Active')
+    voucher_list = Voucher.list_vouchers_by_status()
 
     context = {
         'voucher_table': voucher_list,
