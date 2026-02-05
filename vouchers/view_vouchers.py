@@ -58,7 +58,10 @@ def create_voucher(request):
     elif request.method == 'POST':
         error_message = 'Please check your input data and try again'
 
+    voucher_list = Voucher.list_vouchers_by_status()
+
     context = {
+        'voucher_table': voucher_list,
         'form': form,
         'success_message': success_message,
         'error_message': error_message,
