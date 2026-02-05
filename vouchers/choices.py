@@ -4,5 +4,5 @@ from django.db import models
 
 class VoucherStatus(models.TextChoices):
     ACTIVE = 'Active', 'Active'
-    INACTIVE = 'Inactive', 'Inactive'
+    SOLD = 'Sold', 'Sold'
     PENDING = 'Pending', 'Pending'
