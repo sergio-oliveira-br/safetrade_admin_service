@@ -27,7 +27,7 @@ class Voucher:
         self.voucher_status = voucher_status
 
 
-    def to_dict(self):
+    def _generate_item_dict(self):
         """Converts the object to the format that DynamoDB supports"""
         return {
             'voucher_id': str(uuid.uuid4())[:8].upper(),
@@ -43,7 +43,7 @@ class Voucher:
             table = self._get_table()
             with table.batch_writer() as batch:
                 for _ in range(int(self.voucher_quantity)):
-                    batch.put_item(Item=self.to_dict())
+                    batch.put_item(Item=self._generate_item_dict())
             return True
 
         except ClientError as e:
