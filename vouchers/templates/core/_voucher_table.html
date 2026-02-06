@@ -6,6 +6,7 @@
             <th>Price</th>
             <th>Status</th>
             <th>Tx Hash</th>
+            <th>Edit</th>
         </tr>
     </thead>
     <tbody>
@@ -23,11 +24,20 @@
                 <td><span class="badge bg-warning">{{ v.voucher_status }}</span></td>
             {% endif %}
 
+
             {% if v.voucher_status == 'Active' %}
                  <td><span class="badge bg-info">{{ v.voucher_status }}</span></td>
             {% endif %}
 
             <td>{{ v.voucher_tx_hash }}</td>
+
+            {% if v.voucher_status == 'Active' %}
+                <td><button class="badge btn btn-danger">Edit</button></td>
+            {% endif %}
+
+            {% if v.voucher_status != 'Active' %}
+                <td><button class="badge btn btn-secondary">Info</button></td>
+            {% endif %}
         </tr>
         {% endfor %}
     </tbody>
