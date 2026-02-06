@@ -14,7 +14,19 @@
             <td>{{ v.voucher_id }}</td>
             <td>{{ v.voucher_description }}</td>
             <td>€ {{ v.voucher_price }}</td>
-            <td><span class="badge bg-info">{{ v.voucher_status }}</span></td>
+
+            {% if v.voucher_status == 'Sold' %}
+                 <td><span class="badge bg-success">{{ v.voucher_status }}</span></td>
+            {% endif %}
+
+            {% if v.voucher_status == 'Pending' %}
+                <td><span class="badge bg-warning">{{ v.voucher_status }}</span></td>
+            {% endif %}
+
+            {% if v.voucher_status == 'Active' %}
+                 <td><span class="badge bg-info">{{ v.voucher_status }}</span></td>
+            {% endif %}
+
             <td>{{ v.voucher_tx_hash }}</td>
         </tr>
         {% endfor %}
