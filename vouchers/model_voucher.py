@@ -1,6 +1,11 @@
+# vouchers/model_voucher.py
+
 import uuid
+import logging
 import boto3
-from boto3.dynamodb.conditions import Key
+from botocore.exceptions import ClientError, BotoCoreError
+
+logger = logging.getLogger(__name__)
 
 # Create your models here.
 class Voucher:
@@ -34,10 +39,25 @@ class Voucher:
 
 
     def save_multiple_vouchers(self):
-        table = self._get_table()
-        with table.batch_writer() as batch:
-            for _ in range(int(self.voucher_quantity)):
-                batch.put_item(Item=self.to_dict())
+        try:
+            table = self._get_table()
+            with table.batch_writer() as batch:
+                for _ in range(int(self.voucher_quantity)):
+                    batch.put_item(Item=self.to_dict())
+            return True
+
+        except ClientError as e:
+            error_code = e.response['Error']['Code']
+            logger.error(f"Error on DynamoDB [{error_code}]: {e}")
+            raise
+
+        except BotoCoreError as e:
+            logger.error(f"Error on SDK Boto3: {e}")
+            raise
+
+        except Exception as e:
+            logger.error(f"Unexpected Error: {e}")
+            raise
 
 
     @staticmethod
