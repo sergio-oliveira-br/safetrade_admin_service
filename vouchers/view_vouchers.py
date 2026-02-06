@@ -1,14 +1,10 @@
 # vouchers/view_vouchers.py
 
-from botocore.exceptions import ClientError
-from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
-
 from vouchers.forms import VoucherForm
 from vouchers.model_voucher import Voucher
+from vouchers.services.voucher_admin_service import VoucherAdminService
 
 
 def _get_vouchers_context(form=None, success=None, error=None):
@@ -33,47 +29,27 @@ def vouchers_page(request):
     return render(request, 'core/vouchers.html', context)
 
 
-@require_http_methods(['GET', 'POST'])
+@require_http_methods(['POST'])
 def create_voucher(request):
 
     form = VoucherForm(request.POST or None)
     success_message = None
     error_message = None
 
-    if request.method == 'POST' and form.is_valid():
+    if not form.is_valid():
+        error_message = 'Please check your input data and try again.'
 
-        data = form.cleaned_data
+    elif form.is_valid():
+        service = VoucherAdminService()
+        result = service.register_new_vouchers(form.cleaned_data)
 
-        try:
-            voucher = Voucher(
-                voucher_description=data['voucher_description'],
-                voucher_status=data['voucher_status'],
-                voucher_price=data['voucher_price'],
-                voucher_quantity=data['voucher_quantity']
-            )
-
-            # voucher.save()
-            voucher.save_multiple_vouchers()
-            success_message = 'The voucher creation process has been completed successfully.'
-
+        if result['success']:
+            success_message = result['message']
             form = VoucherForm()
 
-        except ClientError as e:
-            error_message = str(e)
+        else:
+            error_message = result['message']
 
-        except Exception as e:
-            error_message = 'Sorry, something went wrong'
-
-    elif request.method == 'POST':
-        error_message = 'Please check your input data and try again'
-
-    voucher_list = Voucher.list_vouchers_by_status()
-
-    context = {
-        'voucher_table': voucher_list,
-        'form': form,
-        'success_message': success_message,
-        'error_message': error_message,
-    }
-
-    return render(request, 'core/vouchers.html', context)
+    return render(request,
+                  'core/vouchers.html',
+                  _get_vouchers_context(form, success_message, error_message))
