@@ -17,16 +17,7 @@ def _get_vouchers_context(form=None, success=None, error=None):
     }
 
 def vouchers_page(request):
-    form = VoucherForm(request.POST or None)
-
-    voucher_list = Voucher.list_vouchers_by_status()
-
-    context = {
-        'voucher_table': voucher_list,
-        'form': form,
-    }
-
-    return render(request, 'core/vouchers.html', context)
+    return render(request,'core/vouchers.html',_get_vouchers_context())
 
 
 @require_http_methods(['POST'])
