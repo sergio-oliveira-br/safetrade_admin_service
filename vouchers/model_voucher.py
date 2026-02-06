@@ -62,8 +62,12 @@ class Voucher:
 
     @staticmethod
     def list_vouchers_by_status():
-        table = Voucher._get_table()
-        response = table.scan()
+        try:
+            table = Voucher._get_table()
+            response = table.scan()
+            return response.get('Items', [])
 
-        return response.get('Items', [])
-
+        except ClientError as e:
+            error_code = e.response['Error']['Code']
+            logger.error(f"Error on DynamoDB [{error_code}]: {e}")
+            return []
