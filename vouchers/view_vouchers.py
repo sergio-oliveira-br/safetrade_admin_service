@@ -11,6 +11,15 @@ from vouchers.forms import VoucherForm
 from vouchers.model_voucher import Voucher
 
 
+def _get_vouchers_context(form=None, success=None, error=None):
+    """Helper to avoid code repetition in the context"""
+    return {
+        'voucher_table': Voucher.list_vouchers_by_status(),
+        'form': form or VoucherForm(),
+        'success_message': success,
+        'error_message': error,
+    }
+
 def vouchers_page(request):
     form = VoucherForm(request.POST or None)
 
