@@ -5,13 +5,31 @@
       enctype="multipart/form-data"
       method="post" >
 
+    {% csrf_token %}
+
     <div class="row">
          <div class="mb-3 col-12 col-md-6">
             <label for="voucher_description" class="form-label">Description</label>
             {{ form.voucher_description }}
         </div>
+
+        <div class="mb-3 col-12 col-md-3">
+            <label for="voucher_price" class="form-label">Price</label>
+           {{ form.voucher_price }}
+        </div>
+
+        <div class="mb-3 col-12 col-md-3">
+            <label for="voucher_status" class="form-label">Status</label>
+            {{ form.voucher_status }}
+        </div>
+
+        <div class="row">
+                <div class="mb-3 col-12 col-md-12">
+                <label for="voucher_tx_hash" class="form-label">Transaction Hash</label>
+            </div>
+        </div>
+
     </div>
 
-    {% csrf_token %}
-
+    <button type="submit" class="mb-3 col-12 btn btn-danger">Submit</button>
 </form>
