@@ -33,12 +33,6 @@ class Voucher:
         }
 
 
-    def save(self):
-        table = self._get_table()
-
-        return table.put_item(Item=self.to_dict())
-
-
     def save_multiple_vouchers(self):
         table = self._get_table()
         with table.batch_writer() as batch:
