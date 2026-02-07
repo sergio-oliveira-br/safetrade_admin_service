@@ -13,6 +13,6 @@ urlpatterns = [
 
     # Dashboard
     path('dashboard/', view_dashboard.dashboard_page, name='dashboard'),
-    path('edit/', view_edit_voucher.edit_voucher_page, name='edit_page'),
+    path('edit_voucher/<str:voucher_id>/', view_edit_voucher.edit_voucher_page, name='edit_page'),
 
 ]
