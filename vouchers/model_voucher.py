@@ -83,3 +83,40 @@ class Voucher:
             error_code = e.response['Error']['Code']
             logger.error(f"Error on DynamoDB [{error_code}]: {e}")
             return []
+
+
+    @staticmethod
+    def edit_voucher(cleaned_data, voucher_id):
+
+        print(cleaned_data)
+        if not voucher_id:
+            return {"success": False, "error": "Voucher_id not found"}
+
+        try:
+            table = Voucher._get_table().update_item(
+                Key={'voucher_id': voucher_id},
+                UpdateExpression="SET "
+                                 "voucher_status = :val_status,"
+                                 "voucher_price = :val_price,"
+                                 "voucher_description = :val_description,"
+                                 "voucher_tx_hash = :val_tx_hash",
+                ExpressionAttributeValues={
+                    ':val_status': cleaned_data.get('voucher_status'),
+                    ':val_price': cleaned_data.get('voucher_price'),
+                    ':val_description': cleaned_data.get('voucher_description'),
+                    ':val_tx_hash': '',
+                },
+                ReturnValues='UPDATED_NEW'
+            )
+            return {"success": True, "voucher_id": voucher_id,
+                    "table" : table,
+                    "message": "Voucher_id updated successfully"}
+
+        except ClientError as e:
+            error_code = e.response['Error']['Code']
+            logger.error(f"Error on DynamoDB [{error_code}]: {e}")
+            return {"success": False, "error": "voucher_id not found"}
+
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
+            return {"success": False, "error": f"Unexpected error: {e}"}
