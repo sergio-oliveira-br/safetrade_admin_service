@@ -71,3 +71,15 @@ class Voucher:
             error_code = e.response['Error']['Code']
             logger.error(f"Error on DynamoDB [{error_code}]: {e}")
             return []
+
+    @staticmethod
+    def find_voucher_by_id(voucher_id):
+        try:
+            table = Voucher._get_table().get_item(Key={'voucher_id': voucher_id})
+            response = table.get('Item', {})
+            return response
+
+        except ClientError as e:
+            error_code = e.response['Error']['Code']
+            logger.error(f"Error on DynamoDB [{error_code}]: {e}")
+            return []
