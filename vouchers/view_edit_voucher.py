@@ -4,8 +4,14 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 
 from vouchers.forms import VoucherForm
+from vouchers.model_voucher import Voucher
 
 
+def edit_voucher_page(request, voucher_id):
+    voucher_data = Voucher.find_voucher_by_id(voucher_id)
+    form = VoucherForm(initial=voucher_data)
 
-def edit_voucher_page(request):
-    return render(request, 'core/edit_voucher.html', _get_vouchers_context(form=VoucherForm(), success=False, error=None))
+    context = {
+        'form': form,
+    }
+    return render(request,'core/edit_voucher.html', context)
