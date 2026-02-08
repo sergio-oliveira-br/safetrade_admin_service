@@ -1,18 +1,13 @@
 {#vouchers/templates/core/_voucher_edit_form.html#}
 
+<h3 class="text-center">Voucher ID: {{ voucher_id }}</h3>
+
 <form class="mt-3 card p-3"
       action="{% url 'edit_page' voucher_id %}"
       enctype="multipart/form-data"
       method="post" >
 
     {% csrf_token %}
-
-    <div class="row">
-        <div>
-            <h5 class="mb-0">Voucher: {{ voucher.voucher_id }}</h5>
-        </div>
-
-    </div>
 
     <div class="row">
          <div class="mb-3 col-12 col-md-6">
