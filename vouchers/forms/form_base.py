@@ -3,7 +3,7 @@
 from django import forms
 from vouchers.choices import VoucherStatus
 
-class VoucherForm(forms.Form):
+class VoucherBaseForm(forms.Form):
     voucher_description = forms.CharField(
         label='Voucher Description',
         max_length=50,
