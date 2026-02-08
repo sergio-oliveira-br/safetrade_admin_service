@@ -9,5 +9,6 @@ class VoucherEditionForm(VoucherBaseForm):
         label='Voucher Tx Hash',
         min_length=1,
         max_length=50,
+        required=False,
         widget=forms.TextInput(attrs={'class': 'form-control'})
     )
