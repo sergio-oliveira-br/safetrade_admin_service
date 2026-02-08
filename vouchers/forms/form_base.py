@@ -1,7 +1,7 @@
 # vouchers/form_base.py
 
 from django import forms
-from .choices import VoucherStatus
+from vouchers.choices import VoucherStatus
 
 class VoucherForm(forms.Form):
     voucher_description = forms.CharField(
