@@ -2,7 +2,7 @@
 
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
-from vouchers.forms import VoucherForm
+from vouchers.forms.form_for_creation import VoucherCreationForm
 from vouchers.model_voucher import Voucher
 from vouchers.services.voucher_admin_service import VoucherAdminService
 
@@ -11,7 +11,7 @@ def _get_vouchers_context(form=None, success=None, error=None):
     """Helper to avoid code repetition in the context"""
     return {
         'voucher_table': Voucher.list_vouchers_by_status(),
-        'form': form or VoucherForm(),
+        'form': form or VoucherCreationForm(),
         'success_message': success,
         'error_message': error,
     }
@@ -23,7 +23,7 @@ def vouchers_page(request):
 @require_http_methods(['POST'])
 def create_voucher(request):
 
-    form = VoucherForm(request.POST or None)
+    form = VoucherCreationForm(request.POST or None)
     success_message = None
     error_message = None
 
@@ -36,7 +36,7 @@ def create_voucher(request):
 
         if result['success']:
             success_message = result['message']
-            form = VoucherForm()
+            form = VoucherCreationForm()
 
         else:
             error_message = result['message']
