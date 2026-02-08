@@ -15,9 +15,9 @@ def edit_voucher_page(request, voucher_id):
     # if user submit the form
     if request.method == 'POST':
 
-        form_updated = VoucherForm(request.POST)
-        if form_updated.is_valid():
-            Voucher.edit_voucher(form_updated.cleaned_data, voucher_id)
+        form = VoucherForm(request.POST)
+        if form.is_valid():
+            Voucher.edit_voucher(form.cleaned_data, voucher_id)
             messages.success(request, f"Voucher {voucher_id} updated successfully")
 
         else:
