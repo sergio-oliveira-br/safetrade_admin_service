@@ -18,13 +18,6 @@ class VoucherBaseForm(forms.Form):
         widget=forms.NumberInput(attrs={'class': 'form-control'})
     )
 
-    voucher_quantity = forms.IntegerField(
-        label='Voucher Quantity',
-        min_value=1,
-        max_value=5,
-        widget=forms.NumberInput(attrs={'class': 'form-control'})
-    )
-
     voucher_status = forms.ChoiceField(
         label='Voucher Status',
         choices=VoucherStatus.choices,
