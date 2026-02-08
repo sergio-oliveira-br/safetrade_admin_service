@@ -104,7 +104,7 @@ class Voucher:
                     ':val_status': cleaned_data.get('voucher_status'),
                     ':val_price': cleaned_data.get('voucher_price'),
                     ':val_description': cleaned_data.get('voucher_description'),
-                    ':val_tx_hash': '',
+                    ':val_tx_hash': cleaned_data.get('voucher_tx_hash'),
                 },
                 ReturnValues='UPDATED_NEW'
             )
