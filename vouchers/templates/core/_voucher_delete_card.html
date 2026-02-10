@@ -1,0 +1,30 @@
+{#vouchers/templates/core/_voucher_delete_card.html#}
+
+<form>
+    {% csrf_token %}
+    <div class="row row justify-content-center">
+        <div class="col-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0">Voucher:</h5>
+                </div>
+
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <small class="text-muted d-block">Description</small>
+                            <strong></strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <small class="text-muted d-block">Price</small>
+                            <strong class="text-primary"></strong>
+                        </div>
+                    </div>
+                    <button class="btn btn-danger">Delete item permanently</button>
+                    <button class="btn btn-success">Cancel this action</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
