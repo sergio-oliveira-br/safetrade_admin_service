@@ -118,3 +118,21 @@ class Voucher:
         except Exception as e:
             logger.error(f"Unexpected error: {e}")
             return {"success": False, "error": f"Unexpected error: {e}"}
+
+    @staticmethod
+    def delete_voucher(voucher_id):
+        if not voucher_id:
+            return {"success": False, "error": "Voucher_id not found"}
+
+        try:
+            Voucher._get_table().delete_item(Key={'voucher_id': voucher_id})
+            return {"success": True, "voucher_id": voucher_id, "message": "Voucher_id deleted successfully"}
+
+        except ClientError as e:
+            error_code = e.response['Error']['Code']
+            logger.error(f"Error on DynamoDB [{error_code}]: {e}")
+            return {"success": False, "error": "voucher_id not found"}
+
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
+            return {"success": False, "error": f"Unexpected error: {e}"}
