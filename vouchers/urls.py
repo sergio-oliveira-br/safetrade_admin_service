@@ -1,12 +1,11 @@
 # vouchers/urls.py
 
 from django.urls import path
-from . import view_vouchers, view_dashboard, view_index, view_edit_voucher
+from . import view_vouchers, view_dashboard, view_index, view_edit_voucher, view_delete_voucher
 
 urlpatterns = [
     # Index
     path('', view_index.index_page, name='index'),
-
     # Admin
     path('vouchers/', view_vouchers.vouchers_page, name='vouchers'),
     path('vouchers/create', view_vouchers.create_voucher, name='create_voucher'),
@@ -14,5 +13,7 @@ urlpatterns = [
     # Dashboard
     path('dashboard/', view_dashboard.dashboard_page, name='dashboard'),
     path('edit_voucher/<str:voucher_id>/', view_edit_voucher.edit_voucher_page, name='edit_page'),
+
+    path('delete_voucher/<str:voucher_id>', view_delete_voucher.delete_voucher_page, name='delete_page'),
 
 ]
