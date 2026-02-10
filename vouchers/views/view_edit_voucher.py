@@ -23,4 +23,4 @@ def edit_voucher_page(request, voucher_id):
         else:
             messages.error(request, f"Form was not valid! Voucher ID: {voucher_id} not edited")
 
-    return render(request,'core/edit_voucher.html', {'form': form, 'voucher_id': voucher_id})
+    return render(request, 'core/edit_voucher.html', {'form': form, 'voucher_id': voucher_id})

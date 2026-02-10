@@ -12,4 +12,4 @@ def delete_voucher_page(request, voucher_id):
         'voucher': voucher,
         'voucher_id': voucher_id,
     }
-    return render(request,'core/delete_voucher.html', context )
+    return render(request, 'core/delete_voucher.html', context)

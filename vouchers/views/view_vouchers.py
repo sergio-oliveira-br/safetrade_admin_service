@@ -17,7 +17,7 @@ def _get_vouchers_context(form=None, success=None, error=None):
     }
 
 def vouchers_page(request):
-    return render(request,'core/vouchers.html',_get_vouchers_context())
+    return render(request, 'core/vouchers.html', _get_vouchers_context())
 
 
 @require_http_methods(['POST'])
