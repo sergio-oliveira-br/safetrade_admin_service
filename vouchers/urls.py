@@ -1,7 +1,7 @@
 # vouchers/urls.py
 
 from django.urls import path
-from . import view_vouchers, view_dashboard, view_index, view_edit_voucher, view_delete_voucher
+from .views import view_delete_voucher, view_dashboard, view_edit_voucher, view_index, view_vouchers
 
 urlpatterns = [
     # Index
