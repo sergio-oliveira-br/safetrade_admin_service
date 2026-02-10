@@ -87,8 +87,6 @@ class Voucher:
 
     @staticmethod
     def edit_voucher(cleaned_data, voucher_id):
-
-        print(cleaned_data)
         if not voucher_id:
             return {"success": False, "error": "Voucher_id not found"}
 
