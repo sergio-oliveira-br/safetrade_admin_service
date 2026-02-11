@@ -35,6 +35,7 @@ class Voucher:
             'voucher_price': self.voucher_price,
             'voucher_status': str(self.voucher_status),
             'voucher_tx_hash': '',
+            'voucher_qrcode_address': ''
         }
 
 
