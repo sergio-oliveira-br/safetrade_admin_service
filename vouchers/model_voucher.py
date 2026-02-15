@@ -3,6 +3,7 @@
 import uuid
 import logging
 import boto3
+from boto3.dynamodb.conditions import Key
 from botocore.exceptions import ClientError, BotoCoreError
 
 logger = logging.getLogger(__name__)
@@ -133,6 +134,26 @@ class Voucher:
             error_code = e.response['Error']['Code']
             logger.error(f"Error on DynamoDB [{error_code}]: {e}")
             return {"success": False, "error": "voucher_id not found"}
+
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
+            return {"success": False, "error": f"Unexpected error: {e}"}
+
+
+    @staticmethod
+    def count_vouches_by_status(status):
+
+        try:
+            response_table = Voucher._get_table().query(
+                        IndexName='voucher_status_index',
+                        KeyConditionExpression=Key('voucher_status').eq(status))
+
+            return len(response_table.get('Items', []))
+
+        except ClientError as e:
+            error_code = e.response['Error']['Code']
+            logger.error(f"Error on DynamoDB [{error_code}]: {e}")
+            return {"success": False, "error": "Status not found"}
 
         except Exception as e:
             logger.error(f"Unexpected error: {e}")
