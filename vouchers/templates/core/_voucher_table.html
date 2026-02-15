@@ -29,6 +29,10 @@
                  <td><span class="badge bg-info">{{ v.voucher_status }}</span></td>
             {% endif %}
 
+            {% if v.voucher_status == 'Gifted' %}
+                 <td><span class="badge bg-primary">{{ v.voucher_status }}</span></td>
+            {% endif %}
+
             <td>{{ v.voucher_tx_hash }}</td>
 
             {% if v.voucher_status == 'Active' %}
