@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
 
 # Create your views here.
@@ -23,5 +24,13 @@ def dashboard_page(request):
     return render(request, 'core/pages/dashboard.html', context)
 
 def voucher_by_status_page(request, voucher_status):
+
     service_response = Voucher.list_vouchers_by_status(voucher_status)
-    return render(request, 'core/pages/../templates/core/componenets/dash_table.html', context={'voucher_table': service_response})
+
+    paginator = Paginator(service_response, 10)
+    num_pages = request.GET.get('page')
+    page_obj = paginator.get_page(num_pages)
+
+    return render(request,
+                  'core/pages/dash_table.html',
+                  context={'page_obj':page_obj})
