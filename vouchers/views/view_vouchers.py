@@ -10,7 +10,7 @@ from vouchers.services.voucher_admin_service import VoucherAdminService
 def _get_vouchers_context(form=None, success=None, error=None):
     """Helper to avoid code repetition in the context"""
     return {
-        'voucher_table': Voucher.list_vouchers_by_status(),
+        'voucher_table': Voucher.list_all_vouchers(),
         'form': form or VoucherCreationForm(),
         'success_message': success,
         'error_message': error,
