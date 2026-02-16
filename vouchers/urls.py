@@ -17,4 +17,6 @@ urlpatterns = [
     path('delete_voucher_page/<str:voucher_id>', view_delete_voucher.delete_voucher_page, name='delete_page'),
     path('delete_voucher/<str:voucher_id>', view_delete_voucher.delete_voucher, name='delete_voucher'),
 
+    path('display_voucher_by_status/<str:voucher_status>', view_dashboard.voucher_by_status_page, name='display_voucher_by_status'),
+
 ]
