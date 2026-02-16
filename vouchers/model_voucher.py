@@ -75,6 +75,24 @@ class Voucher:
             return []
 
     @staticmethod
+    def list_vouchers_by_status(voucher_status):
+        try:
+            table = Voucher._get_table()
+            response = table.query(
+                IndexName='voucher_status_index',
+                KeyConditionExpression=Key('voucher_status').eq(voucher_status))
+
+            print(response)
+
+            return response.get('Items', [])
+
+        except ClientError as e:
+            error_code = e.response['Error']['Code']
+            logger.error(f"Error on DynamoDB [{error_code}]: {e}")
+            return []
+
+
+    @staticmethod
     def find_voucher_by_id(voucher_id):
         try:
             table = Voucher._get_table().get_item(Key={'voucher_id': voucher_id})
