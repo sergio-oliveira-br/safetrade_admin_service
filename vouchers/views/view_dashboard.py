@@ -1,9 +1,5 @@
 from django.core.paginator import Paginator
-from django.http import HttpResponse
 from django.shortcuts import render
-
-# Create your views here.
-from django.shortcuts import render, redirect
 from django.views.decorators.http import require_safe, require_POST
 
 from vouchers.model_voucher import Voucher
