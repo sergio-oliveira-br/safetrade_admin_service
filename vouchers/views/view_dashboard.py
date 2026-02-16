@@ -21,3 +21,7 @@ def dashboard_page(request):
     }
 
     return render(request, 'core/dashboard.html', context)
+
+def voucher_by_status_page(request, voucher_status):
+    service_response = Voucher.list_vouchers_by_status(voucher_status)
+    return render(request, 'core/dash_table.html', context={'voucher_table': service_response})
