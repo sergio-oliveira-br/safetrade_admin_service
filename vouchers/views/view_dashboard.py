@@ -1,9 +1,10 @@
 from django.core.paginator import Paginator
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, redirect
-from django.views.decorators.http import require_safe
+from django.views.decorators.http import require_safe, require_POST
 
 from vouchers.model_voucher import Voucher
 
@@ -24,6 +25,7 @@ def dashboard_page(request):
 
     return render(request, 'core/pages/dashboard.html', context)
 
+@require_POST
 def voucher_by_status_page(request, voucher_status):
 
     service_response = Voucher.list_vouchers_by_status(voucher_status)
