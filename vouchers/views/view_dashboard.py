@@ -20,8 +20,8 @@ def dashboard_page(request):
         'gifted_count': gifted_count,
     }
 
-    return render(request, 'core/dashboard.html', context)
+    return render(request, 'core/pages/dashboard.html', context)
 
 def voucher_by_status_page(request, voucher_status):
     service_response = Voucher.list_vouchers_by_status(voucher_status)
-    return render(request, 'core/dash_table.html', context={'voucher_table': service_response})
+    return render(request, 'core/pages/../templates/core/componenets/dash_table.html', context={'voucher_table': service_response})

@@ -4,4 +4,4 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 
 def index_page(request):
-    return render(request, 'core/index.html')
+    return render(request, 'core/pages/index.html')

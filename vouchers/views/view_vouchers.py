@@ -27,7 +27,7 @@ def _get_vouchers_context(request, form=None, success=None, error=None):
 
 def vouchers_page(request):
     context = _get_vouchers_context(request)
-    return render(request, 'core/vouchers.html',context)
+    return render(request, 'core/pages/vouchers.html', context)
 
 
 @require_http_methods(['POST'])
@@ -52,5 +52,5 @@ def create_voucher(request):
             error_message = result['message']
 
     return render(request,
-                  'core/vouchers.html',
+                  'core/pages/vouchers.html',
                   _get_vouchers_context(form, success_message, error_message))

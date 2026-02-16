@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} SafeTrade | Vouchers {% endblock %}
+
+{% block content %}
+
+    {% include 'core/componenets/_voucher_form.html' %}
+
+    <br>
+
+    {% include 'core/componenets/_voucher_table.html' %}
+    {% include 'core/componenets/_paginator.html' %}
+
+{% endblock %}
