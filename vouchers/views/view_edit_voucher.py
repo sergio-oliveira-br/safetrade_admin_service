@@ -1,12 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render
-
-# Create your views here.
-from django.shortcuts import render, redirect
-
 from vouchers.forms.form_for_edition import VoucherEditionForm
 from vouchers.model_voucher import Voucher
-
 
 def edit_voucher_page(request, voucher_id):
     voucher_data = Voucher.find_voucher_by_id(voucher_id)
