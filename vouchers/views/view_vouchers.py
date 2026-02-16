@@ -2,6 +2,7 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
+
 from vouchers.forms.form_for_creation import VoucherCreationForm
 from vouchers.model_voucher import Voucher
 from vouchers.services.voucher_admin_service import VoucherAdminService
@@ -26,6 +27,7 @@ def _get_vouchers_context(request, form=None, success=None, error=None):
         'error_message': error,
     }
 
+@require_safe
 def vouchers_page(request):
     context = _get_vouchers_context(request)
     return render(request, 'core/pages/vouchers.html', context)
