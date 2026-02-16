@@ -11,6 +11,7 @@ def _get_vouchers_context(request, form=None, success=None, error=None):
     """Helper to avoid code repetition in the context"""
 
     all_vouchers = Voucher.list_all_vouchers()
+    number_of_vouchers = len(all_vouchers)
 
     paginator = Paginator(all_vouchers, 10)
     num_pages = request.GET.get('page')
@@ -18,7 +19,7 @@ def _get_vouchers_context(request, form=None, success=None, error=None):
 
 
     return {
-        # 'voucher_table': Voucher.list_all_vouchers(),
+        'number_of_vouchers': number_of_vouchers,
         'page_obj': page_obj,
         'form': form or VoucherCreationForm(),
         'success_message': success,
