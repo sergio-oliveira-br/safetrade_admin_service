@@ -3,10 +3,11 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, redirect
+from django.views.decorators.http import require_safe
 
 from vouchers.model_voucher import Voucher
 
-
+@require_safe
 def dashboard_page(request):
 
     active_count = Voucher.count_vouches_by_status('Active')
