@@ -1,9 +1,11 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from django.views.decorators.http import require_POST, require_safe
 
 from vouchers.model_voucher import Voucher
 
 
+@require_safe
 def delete_voucher_page(request, voucher_id):
 
     voucher = Voucher.find_voucher_by_id(voucher_id)
@@ -14,6 +16,7 @@ def delete_voucher_page(request, voucher_id):
     }
     return render(request, 'core/pages/delete_voucher.html', context)
 
+@require_POST
 def delete_voucher(request, voucher_id):
 
     voucher = Voucher.find_voucher_by_id(voucher_id)
