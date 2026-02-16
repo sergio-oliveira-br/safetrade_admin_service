@@ -63,7 +63,7 @@ class Voucher:
 
 
     @staticmethod
-    def list_vouchers_by_status():
+    def list_all_vouchers():
         try:
             table = Voucher._get_table()
             response = table.scan()
