@@ -1,5 +1,5 @@
 # vouchers/view_vouchers.py
-
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
 from vouchers.forms.form_for_creation import VoucherCreationForm
@@ -7,17 +7,27 @@ from vouchers.model_voucher import Voucher
 from vouchers.services.voucher_admin_service import VoucherAdminService
 
 
-def _get_vouchers_context(form=None, success=None, error=None):
+def _get_vouchers_context(request, form=None, success=None, error=None):
     """Helper to avoid code repetition in the context"""
+
+    all_vouchers = Voucher.list_all_vouchers()
+
+    paginator = Paginator(all_vouchers, 10)
+    num_pages = request.GET.get('page')
+    page_obj = paginator.get_page(num_pages)
+
+
     return {
-        'voucher_table': Voucher.list_all_vouchers(),
+        # 'voucher_table': Voucher.list_all_vouchers(),
+        'page_obj': page_obj,
         'form': form or VoucherCreationForm(),
         'success_message': success,
         'error_message': error,
     }
 
 def vouchers_page(request):
-    return render(request, 'core/vouchers.html', _get_vouchers_context())
+    context = _get_vouchers_context(request)
+    return render(request, 'core/vouchers.html',context)
 
 
 @require_http_methods(['POST'])
