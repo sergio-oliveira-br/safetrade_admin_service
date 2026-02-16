@@ -10,7 +10,6 @@
             "s3transfer",
             "concurrent"
         ],
-        "profile_name": "default",
         "project_name": "safetrade-admin",
         "runtime": "python3.12",
         "s3_bucket": "zappa-static-safetrade-admin-service-deploy",
