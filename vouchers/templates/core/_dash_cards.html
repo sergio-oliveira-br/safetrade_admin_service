@@ -4,9 +4,9 @@
             Vouchers Active
         </div>
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-info">Check</a>
+            <h5 class="card-title">Your vouchers active</h5>
+            <p class="card-text">{{ active_count }}</p>
+            <a href="{% url 'display_voucher_by_status' 'Active' %}" class="btn btn-info">Check</a>
         </div>
     </div>
     <br>
@@ -15,9 +15,9 @@
             Vouchers Pending
         </div>
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-warning">Check</a>
+            <h5 class="card-title">Vouchers that have not been paid yet</h5>
+            <p class="card-text">{{ pending_count }}</p>
+            <a href="{% url 'display_voucher_by_status' 'Pending' %}" class="btn btn-warning">Check</a>
         </div>
     </div>
     <br>
@@ -26,9 +26,9 @@
             Vouchers Sold
         </div>
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-success">Check</a>
+            <h5 class="card-title">Vouchers that have been traded</h5>
+            <p class="card-text">{{ sold_count }}</p>
+            <a href="{% url 'display_voucher_by_status' 'Sold' %}" class="btn btn-success">Check</a>
         </div>
     </div>
     <br>
@@ -37,9 +37,9 @@
             Vouchers Gifted
         </div>
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Check</a>
+            <h5 class="card-title">The vouchers donated through your API are listed here</h5>
+            <p class="card-text">{{ gifted_count }}</p>
+            <a href="{% url 'display_voucher_by_status' 'Gifted' %}" class="btn btn-primary">Check</a>
         </div>
     </div>
 </div>
