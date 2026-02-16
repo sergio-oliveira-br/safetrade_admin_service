@@ -19,14 +19,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          args: >
-            -Dsonar.projectKey=safetrade_admin_service
-            -Dsonar.organization=sergio-oliveira-br
-            -Dsonar.host.url=https://sonarcloud.io
-            -Dsonar.branch.name=main
-            -Dsonar.python.version=3.12
-            -Dsonar.sources=.
-            -Dsonar.scm.provider=git
+          projectBaseDir: .
 
   deploy-update:
     name: Zappa Update
