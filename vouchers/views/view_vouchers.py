@@ -1,7 +1,7 @@
 # vouchers/view_vouchers.py
 from django.core.paginator import Paginator
 from django.shortcuts import render
-from django.views.decorators.http import require_http_methods
+from django.views.decorators.http import require_http_methods, require_safe
 
 from vouchers.forms.form_for_creation import VoucherCreationForm
 from vouchers.model_voucher import Voucher
