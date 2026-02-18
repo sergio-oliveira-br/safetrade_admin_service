@@ -1,4 +1,5 @@
 # vouchers/view_vouchers.py
+from django.contrib import messages
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods, require_safe
@@ -8,7 +9,7 @@ from vouchers.model_voucher import Voucher
 from vouchers.services.voucher_admin_service import VoucherAdminService
 
 
-def _get_vouchers_context(request, form=None, success=None, error=None):
+def _get_vouchers_context(request, form=None):
     """Helper to avoid code repetition in the context"""
 
     all_vouchers = Voucher.list_all_vouchers()
@@ -23,8 +24,6 @@ def _get_vouchers_context(request, form=None, success=None, error=None):
         'number_of_vouchers': number_of_vouchers,
         'page_obj': page_obj,
         'form': form or VoucherCreationForm(),
-        'success_message': success,
-        'error_message': error,
     }
 
 @require_safe
@@ -37,23 +36,21 @@ def vouchers_page(request):
 def create_voucher(request):
 
     form = VoucherCreationForm(request.POST or None)
-    success_message = None
-    error_message = None
 
     if not form.is_valid():
-        error_message = 'Please check your input data and try again.'
+        messages.error(request, 'Please check your input data and try again.')
 
     elif form.is_valid():
         service = VoucherAdminService()
         result = service.register_new_vouchers(form.cleaned_data)
 
         if result['success']:
-            success_message = result['message']
+            messages.success(request, result['message'])
             form = VoucherCreationForm()
 
         else:
-            error_message = result['message']
+            messages.error(request, result['message'])
 
     return render(request,
                   'core/pages/vouchers.html',
-                  _get_vouchers_context(request, form, success_message, error_message))
+                  _get_vouchers_context(request, form))
