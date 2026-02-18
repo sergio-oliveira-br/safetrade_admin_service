@@ -4,7 +4,7 @@ from django.views.decorators.http import require_safe, require_POST, require_GET
 
 from vouchers.model_voucher import Voucher
 
-@require_safe
+
 def dashboard_page(request):
 
     active_count = Voucher.count_vouches_by_status('Active')
@@ -21,7 +21,7 @@ def dashboard_page(request):
 
     return render(request, 'core/pages/dashboard.html', context)
 
-@require_GET
+
 def voucher_by_status_page(request, voucher_status):
 
     service_response = Voucher.list_vouchers_by_status(voucher_status)
