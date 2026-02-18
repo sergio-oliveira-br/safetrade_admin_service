@@ -56,4 +56,4 @@ def create_voucher(request):
 
     return render(request,
                   'core/pages/vouchers.html',
-                  _get_vouchers_context(form, success_message, error_message))
+                  _get_vouchers_context(request, form, success_message, error_message))
