@@ -5,7 +5,6 @@ from django.views.decorators.http import require_POST
 from vouchers.forms.form_for_edition import VoucherEditionForm
 from vouchers.model_voucher import Voucher
 
-@require_POST
 def edit_voucher_page(request, voucher_id):
     voucher_data = Voucher.find_voucher_by_id(voucher_id)
     form = VoucherEditionForm(initial=voucher_data)
