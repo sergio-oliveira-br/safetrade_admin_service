@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15" version="29.5.3">
   <diagram name="Page-1" id="BgiJ8Q8dbtc40uG5Mtb7">
-    <mxGraphModel dx="781" dy="604" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="723" dy="559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -136,7 +136,7 @@
           <mxGeometry height="30" width="77" x="35.5" y="88" as="geometry" />
         </mxCell>
         <mxCell id="irREyx_xRZtxWgqb3DPT-5" parent="l1Omu3dYxkEdK4NGGq-r-36" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;fontSize=9;" value="1" vertex="1">
-          <mxGeometry height="30" width="30" x="114" y="138" as="geometry" />
+          <mxGeometry height="30" width="30" x="110" y="141" as="geometry" />
         </mxCell>
         <mxCell id="irREyx_xRZtxWgqb3DPT-6" parent="l1Omu3dYxkEdK4NGGq-r-36" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;fontSize=9;" value="2" vertex="1">
           <mxGeometry height="30" width="30" x="110" y="200" as="geometry" />
@@ -227,9 +227,6 @@
         </mxCell>
         <mxCell id="Ffss81v8E6SzfuyoDxWx-78" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;fontSize=15;" value="&lt;b&gt;&lt;font&gt;manage vouchers&lt;/font&gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="30" width="74" x="183" y="705" as="geometry" />
-        </mxCell>
-        <mxCell id="Ffss81v8E6SzfuyoDxWx-81" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;li data-start=&quot;2855&quot; data-end=&quot;2922&quot; style=&quot;caret-color: rgb(255, 255, 255);&quot;&gt;&lt;p data-start=&quot;2858&quot; data-end=&quot;2922&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;The client sends a voucher purchase request through API Gateway.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;2923&quot; data-end=&quot;3005&quot; style=&quot;caret-color: rgb(255, 255, 255);&quot;&gt;&lt;p data-start=&quot;2926&quot; data-end=&quot;3005&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;The Verification Lambda validates the blockchain transaction using Alchemy API.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;3006&quot; data-end=&quot;3071&quot; style=&quot;caret-color: rgb(255, 255, 255);&quot;&gt;&lt;p data-start=&quot;3009&quot; data-end=&quot;3071&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;After confirmation, the voucher status is updated in DynamoDB.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;3072&quot; data-end=&quot;3132&quot; style=&quot;caret-color: rgb(255, 255, 255);&quot;&gt;&lt;p data-start=&quot;3075&quot; data-end=&quot;3132&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;DynamoDB Streams captures the change event (CDC pattern).&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;3133&quot; data-end=&quot;3173&quot; style=&quot;caret-color: rgb(255, 255, 255);&quot;&gt;&lt;p data-start=&quot;3136&quot; data-end=&quot;3173&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;The event is delivered to Amazon SQS.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;3174&quot; data-end=&quot;3234&quot; style=&quot;caret-color: rgb(255, 255, 255);&quot;&gt;&lt;p data-start=&quot;3177&quot; data-end=&quot;3234&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;The Processor Lambda consumes the message asynchronously.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;3235&quot; data-end=&quot;3265&quot; style=&quot;caret-color: rgb(255, 255, 255);&quot;&gt;&lt;p data-start=&quot;3238&quot; data-end=&quot;3265&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;The QR Code API is invoked.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;3266&quot; data-end=&quot;3305&quot; style=&quot;caret-color: rgb(255, 255, 255);&quot;&gt;&lt;p data-start=&quot;3269&quot; data-end=&quot;3305&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;The generated asset is stored in S3.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;" vertex="1">
-          <mxGeometry height="270" width="450" x="120" y="910" as="geometry" />
         </mxCell>
         <mxCell id="Ffss81v8E6SzfuyoDxWx-83" parent="1" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 15px;&quot;&gt;Client&lt;/font&gt;" vertex="1">
           <mxGeometry height="40" width="88" x="479" y="1180" as="geometry" />
