@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15" version="29.5.3">
   <diagram name="Page-1" id="BgiJ8Q8dbtc40uG5Mtb7">
-    <mxGraphModel dx="813" dy="629" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="849" dy="657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -463,6 +463,42 @@
               <mxPoint x="270" y="1034" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="pSuxi9G8HOsYH5XvWOSp-1" parent="1" style="triangle;whiteSpace=wrap;html=1;rotation=-90;rounded=0;sketch=1;curveFitting=1;jiggle=2;" value="" vertex="1">
+          <mxGeometry height="739" width="450" x="845.5" y="964.5" as="geometry" />
+        </mxCell>
+        <mxCell id="pSuxi9G8HOsYH5XvWOSp-2" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;sketch=1;curveFitting=1;jiggle=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="882.1682336139538" y="1460.0003521685503" as="sourcePoint" />
+            <mxPoint x="1258.83" y="1460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pSuxi9G8HOsYH5XvWOSp-3" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;sketch=1;curveFitting=1;jiggle=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="955.5" y="1350.0003521685503" as="sourcePoint" />
+            <mxPoint x="1185.5" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pSuxi9G8HOsYH5XvWOSp-5" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font face=&quot;Comic Sans MS&quot; size=&quot;4&quot;&gt;Data Persistence&lt;/font&gt;&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod&amp;nbsp;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="412" x="883.5" y="1370" as="geometry" />
+        </mxCell>
+        <mxCell id="pSuxi9G8HOsYH5XvWOSp-6" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; font-size: 18px;&quot;&gt;Asynchronous Path&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur&amp;nbsp;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="270" x="970" y="1260" as="geometry" />
+        </mxCell>
+        <mxCell id="pSuxi9G8HOsYH5XvWOSp-7" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; font-size: 18px;&quot;&gt;User-interface&lt;/span&gt;&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&amp;nbsp;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="511.25" x="814.87" y="1730" as="geometry" />
+        </mxCell>
+        <mxCell id="pSuxi9G8HOsYH5XvWOSp-8" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; font-size: 18px;&quot;&gt;Synchronous Path&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="510" x="845.5" y="1470" as="geometry" />
+        </mxCell>
+        <mxCell id="pSuxi9G8HOsYH5XvWOSp-9" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;sketch=1;curveFitting=1;jiggle=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="992.1700000000001" y="1240" as="sourcePoint" />
+            <mxPoint x="1148.8317663860462" y="1240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pSuxi9G8HOsYH5XvWOSp-11" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; font-size: 18px;&quot;&gt;Asset&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet,&amp;nbsp;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="200" x="1010" y="1150" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
