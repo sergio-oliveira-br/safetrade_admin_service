@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15" version="29.5.3">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15" version="29.5.5">
   <diagram name="Page-1" id="BgiJ8Q8dbtc40uG5Mtb7">
-    <mxGraphModel dx="1502" dy="1162" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="630" dy="487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -418,28 +418,16 @@
           <mxGeometry height="30" width="60" x="128" y="1575" as="geometry" />
         </mxCell>
         <mxCell id="hIJboSu-3nNltyjy3slt-1" parent="1" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#666666;fillColor=#f5f5f5;verticalAlign=top;align=left;spacingLeft=30;dashed=0;sketch=1;curveFitting=1;jiggle=2;fontColor=#333333;" value="&lt;b data-path-to-node=&quot;3,0,0&quot; data-index-in-node=&quot;0&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;API Consumer&lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;font-size: medium;&quot;&gt;&lt;/span&gt;" vertex="1">
-          <mxGeometry height="170" width="155.1" x="105" y="940" as="geometry" />
+          <mxGeometry height="90" width="290" x="280" y="1270" as="geometry" />
         </mxCell>
         <mxCell id="hIJboSu-3nNltyjy3slt-5" parent="hIJboSu-3nNltyjy3slt-1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.authenticated_user;" value="" vertex="1">
-          <mxGeometry height="58" width="58" x="4.9999999999999964" y="80" as="geometry" />
+          <mxGeometry height="58" width="58" x="193" y="20" as="geometry" />
         </mxCell>
         <mxCell id="hIJboSu-3nNltyjy3slt-7" parent="hIJboSu-3nNltyjy3slt-1" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=light-dark(#222f3e, #1A1A1A);strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=api" value="" vertex="1">
-          <mxGeometry height="50" width="52.1" x="73" y="33" as="geometry" />
-        </mxCell>
-        <mxCell id="hIJboSu-3nNltyjy3slt-18" parent="hIJboSu-3nNltyjy3slt-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;fontSize=9;" value="Send POST&lt;div&gt;request&lt;/div&gt;" vertex="1">
-          <mxGeometry height="30" width="65" x="85" y="86" as="geometry" />
-        </mxCell>
-        <mxCell id="hIJboSu-3nNltyjy3slt-19" parent="hIJboSu-3nNltyjy3slt-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;fontSize=9;" value="Receive Voucher ID" vertex="1">
-          <mxGeometry height="30" width="60" x="65.1" y="125" as="geometry" />
-        </mxCell>
-        <mxCell id="hIJboSu-3nNltyjy3slt-21" parent="hIJboSu-3nNltyjy3slt-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;fontSize=9;" value="1" vertex="1">
-          <mxGeometry height="30" width="30" x="63" y="83" as="geometry" />
-        </mxCell>
-        <mxCell id="hIJboSu-3nNltyjy3slt-22" parent="hIJboSu-3nNltyjy3slt-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;fontSize=9;" value="2" vertex="1">
-          <mxGeometry height="30" width="30" x="120" y="125" as="geometry" />
+          <mxGeometry height="50" width="52.1" x="130" y="28" as="geometry" />
         </mxCell>
         <mxCell id="hIJboSu-3nNltyjy3slt-11" parent="1" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#6c8ebf;fillColor=#dae8fc;verticalAlign=top;align=left;spacingLeft=30;dashed=0;sketch=1;curveFitting=1;jiggle=2;" value="&lt;b data-path-to-node=&quot;3,0,0&quot; data-index-in-node=&quot;0&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;AWS CLOUD&lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;font-size: medium;&quot;&gt;&lt;/span&gt;" vertex="1">
-          <mxGeometry height="170" width="290" x="280" y="940" as="geometry" />
+          <mxGeometry height="320" width="290" x="280" y="940" as="geometry" />
         </mxCell>
         <mxCell id="hIJboSu-3nNltyjy3slt-17" edge="1" parent="hIJboSu-3nNltyjy3slt-11" source="hIJboSu-3nNltyjy3slt-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;sketch=1;curveFitting=1;jiggle=2;startArrow=classic;startFill=1;" target="hIJboSu-3nNltyjy3slt-15">
           <mxGeometry relative="1" as="geometry" />
@@ -456,11 +444,34 @@
         <mxCell id="hIJboSu-3nNltyjy3slt-25" parent="hIJboSu-3nNltyjy3slt-11" style="text;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-family: &amp;quot;Comic Sans MS&amp;quot;; font-size: 9px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(236, 236, 236); text-decoration: none; float: none; display: inline !important;&quot;&gt;GET&lt;/span&gt;" vertex="1">
           <mxGeometry height="30" width="30" x="133.5" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="hIJboSu-3nNltyjy3slt-16" edge="1" parent="1" source="hIJboSu-3nNltyjy3slt-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;sketch=1;curveFitting=1;jiggle=2;startArrow=classic;startFill=1;" target="hIJboSu-3nNltyjy3slt-14">
+        <mxCell id="yQfyHbOdrQV9memyWPIt-2" edge="1" parent="hIJboSu-3nNltyjy3slt-11" source="yQfyHbOdrQV9memyWPIt-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;sketch=1;curveFitting=1;jiggle=2;" target="hIJboSu-3nNltyjy3slt-24">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="270" y="1060" />
-              <mxPoint x="270" y="1034" />
+              <mxPoint x="77" y="220" />
+              <mxPoint x="77" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yQfyHbOdrQV9memyWPIt-1" parent="hIJboSu-3nNltyjy3slt-11" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.api_gateway;" value="Amazon API Gateway" vertex="1">
+          <mxGeometry height="110" width="80" x="37" y="204" as="geometry" />
+        </mxCell>
+        <mxCell id="hIJboSu-3nNltyjy3slt-19" parent="hIJboSu-3nNltyjy3slt-11" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;fontSize=9;" value="Receive Voucher ID" vertex="1">
+          <mxGeometry height="30" width="60" x="190" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="hIJboSu-3nNltyjy3slt-22" parent="hIJboSu-3nNltyjy3slt-11" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;fontSize=9;" value="2" vertex="1">
+          <mxGeometry height="30" width="30" x="163.49999999999997" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="hIJboSu-3nNltyjy3slt-18" parent="hIJboSu-3nNltyjy3slt-11" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;fontSize=9;" value="Send POST&lt;div&gt;request&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="65" x="133.5" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="hIJboSu-3nNltyjy3slt-21" parent="hIJboSu-3nNltyjy3slt-11" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;fontSize=9;" value="1" vertex="1">
+          <mxGeometry height="30" width="30" x="193.5" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="hIJboSu-3nNltyjy3slt-16" edge="1" parent="1" source="hIJboSu-3nNltyjy3slt-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;sketch=1;curveFitting=1;jiggle=2;startArrow=classic;startFill=1;" target="yQfyHbOdrQV9memyWPIt-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="1210" />
+              <mxPoint x="320" y="1210" />
             </Array>
           </mxGeometry>
         </mxCell>
