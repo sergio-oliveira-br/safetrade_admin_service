@@ -6,6 +6,7 @@
             <th>Price</th>
             <th>Status</th>
             <th>Tx Hash</th>
+            <th>QRcode></th>
             <th>Edit</th>
         </tr>
     </thead>
@@ -34,6 +35,7 @@
             {% endif %}
 
             <td>{{ v.voucher_tx_hash }}</td>
+            <td>{{ v.voucher_qrcode_address }}
 
             {% if v.voucher_status == 'Active' %}
                 <td><a href="{% url 'edit_page' v.voucher_id %}" class="badge btn btn-danger">Edit</a></td>
