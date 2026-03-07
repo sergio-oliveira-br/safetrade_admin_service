@@ -7,6 +7,6 @@ class VoucherCreationForm(VoucherBaseForm):
     voucher_quantity = forms.IntegerField(
         label='Voucher Quantity',
         min_value=1,
-        max_value=50,
+        max_value=5000,
         widget=forms.NumberInput(attrs={'class': 'form-control'})
     )
