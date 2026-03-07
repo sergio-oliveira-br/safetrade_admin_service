@@ -54,3 +54,21 @@ def create_voucher(request):
     return render(request,
                   'core/pages/vouchers.html',
                   _get_vouchers_context(request, form))
+
+
+def search_by_id(request):
+
+    voucher_id = request.POST.get('voucher_id')
+    voucher = Voucher.find_voucher_by_id(voucher_id)
+
+    if not voucher:
+        messages.error(request, 'No voucher found.')
+        return render(request, 'core/pages/vouchers.html', _get_vouchers_context(request))
+
+
+    paginator =Paginator([voucher], 1)
+    num_pages = request.GET.get('page')
+    page_obj = paginator.get_page(num_pages)
+    messages.success(request, 'Voucher found')
+
+    return render(request,'core/pages/vouchers.html', context={'page_obj': page_obj})
