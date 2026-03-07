@@ -22,7 +22,7 @@ jobs:
           projectBaseDir: .
 
   run-tests:
-    name: Run Unit Tests
+    name: Unit Tests
     needs: sonarcloud
     runs-on: ubuntu-latest
     steps:
