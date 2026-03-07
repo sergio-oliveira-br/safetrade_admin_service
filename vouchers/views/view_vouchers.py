@@ -69,6 +69,17 @@ def search_by_id(request):
     paginator =Paginator([voucher], 1)
     num_pages = request.GET.get('page')
     page_obj = paginator.get_page(num_pages)
+
     messages.success(request, 'Voucher found')
 
-    return render(request,'core/pages/vouchers.html', context={'page_obj': page_obj})
+    form = VoucherCreationForm(request.POST or None)
+    all_vouchers = Voucher.list_all_vouchers()
+    number_of_vouchers = len(all_vouchers)
+
+    context = {
+        'number_of_vouchers': number_of_vouchers,
+        'page_obj': page_obj,
+        'form': form
+    }
+
+    return render(request,'core/pages/vouchers.html', context)
