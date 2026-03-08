@@ -1,46 +1,48 @@
-<div class="container" style="max-width: 25rem">
-    <br>
-    <div class="card">
-        <div class="card-header">
-            Vouchers Active
+<div class="container">
+    <div class="card-group">
+        <div class="card">
+            <div class="card-header">
+                Vouchers Active
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Your vouchers active</h5>
+                <br>
+                <p class="card-text">{{ active_count }}</p>
+                <a href="{% url 'display_voucher_by_status' 'Active' %}" class="btn btn-info">Check</a>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Your vouchers active</h5>
-            <p class="card-text">{{ active_count }}</p>
-            <a href="{% url 'display_voucher_by_status' 'Active' %}" class="btn btn-info">Check</a>
+
+        <div class="card">
+            <div class="card-header">
+                Vouchers Sold
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Vouchers that have been traded</h5>
+                <p class="card-text">{{ sold_count }}</p>
+                <a href="{% url 'display_voucher_by_status' 'Sold' %}" class="btn btn-success">Check</a>
+            </div>
         </div>
-    </div>
-    <br>
-    <div class="card">
-        <div class="card-header">
-            Vouchers Pending
+
+        <div class="card">
+            <div class="card-header">
+                Vouchers Gifted
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">The vouchers donated through your API are listed here</h5>
+                <p class="card-text">{{ gifted_count }}</p>
+                <a href="{% url 'display_voucher_by_status' 'Gifted' %}" class="btn btn-primary">Check</a>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Vouchers that have not been paid yet</h5>
-            <p class="card-text">{{ pending_count }}</p>
-            <a href="{% url 'display_voucher_by_status' 'Pending' %}" class="btn btn-warning">Check</a>
-        </div>
-    </div>
-    <br>
-    <div class="card">
-        <div class="card-header">
-            Vouchers Sold
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Vouchers that have been traded</h5>
-            <p class="card-text">{{ sold_count }}</p>
-            <a href="{% url 'display_voucher_by_status' 'Sold' %}" class="btn btn-success">Check</a>
-        </div>
-    </div>
-    <br>
-    <div class="card">
-        <div class="card-header">
-            Vouchers Gifted
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">The vouchers donated through your API are listed here</h5>
-            <p class="card-text">{{ gifted_count }}</p>
-            <a href="{% url 'display_voucher_by_status' 'Gifted' %}" class="btn btn-primary">Check</a>
+
+         <div class="card">
+            <div class="card-header">
+                Vouchers Pending
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Vouchers that have not been paid yet</h5>
+                <p class="card-text">{{ pending_count }}</p>
+                <a href="{% url 'display_voucher_by_status' 'Pending' %}" class="btn btn-warning">Check</a>
+            </div>
         </div>
     </div>
 </div>
