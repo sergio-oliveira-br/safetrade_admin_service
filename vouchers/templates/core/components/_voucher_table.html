@@ -1,24 +1,24 @@
 <table class="table">
     <thead>
-        <tr>
-            <th>ID</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Status</th>
-            <th>Tx Hash</th>
-            <th>QRcode</th>
-            <th>Edit</th>
-        </tr>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Tx Hash</th>
+        <th>QRcode</th>
+        <th>Edit</th>
+    </tr>
     </thead>
     <tbody>
-        {% for v in page_obj %}
+    {% for v in page_obj %}
         <tr>
             <td>{{ v.voucher_id }}</td>
             <td>{{ v.voucher_description }}</td>
             <td>€ {{ v.voucher_price }}</td>
 
             {% if v.voucher_status == 'Sold' %}
-                 <td><span class="badge bg-success">{{ v.voucher_status }}</span></td>
+                <td><span class="badge bg-success">{{ v.voucher_status }}</span></td>
             {% endif %}
 
             {% if v.voucher_status == 'Pending' %}
@@ -27,24 +27,36 @@
 
 
             {% if v.voucher_status == 'Active' %}
-                 <td><span class="badge bg-info">{{ v.voucher_status }}</span></td>
+                <td><span class="badge bg-info">{{ v.voucher_status }}</span></td>
             {% endif %}
 
             {% if v.voucher_status == 'Gifted' %}
-                 <td><span class="badge bg-primary">{{ v.voucher_status }}</span></td>
+                <td><span class="badge bg-primary">{{ v.voucher_status }}</span></td>
             {% endif %}
 
             <td>{{ v.voucher_tx_hash }}</td>
-            <td>{{ v.voucher_qrcode_address }}
+
+            {% if v.voucher_qrcode_address %}
+                <td>
+                    <a href="{{ v.voucher_qrcode_address }}" target="_blank">Image</a>
+                </td>
+
+                {% else %}
+               <td>
+                    <p></p>
+                </td>
+            {% endif %}
 
             {% if v.voucher_status == 'Active' %}
                 <td><a href="{% url 'edit_page' v.voucher_id %}" class="badge btn btn-danger">Edit</a></td>
             {% endif %}
 
             {% if v.voucher_status != 'Active' %}
-                <td><button class="badge btn btn-secondary">Info</button></td>
+                <td>
+                    <button class="badge btn btn-secondary">Info</button>
+                </td>
             {% endif %}
         </tr>
-        {% endfor %}
+    {% endfor %}
     </tbody>
 </table>
